@@ -15,7 +15,6 @@ export class MoviesService {
   constructor( private http: HttpClient) { }
 
   //bannerapidata
-
   bannerApiData(): Observable<any> {
     return this.http.get(`${this.baseurl}/trending/all/week?api_key=${this.apikey}`);
   }
@@ -28,8 +27,6 @@ export class MoviesService {
 
   // searchmovive
   getSearchMovie(data: any): Observable<any> {
-    console.log(data, 'movie#');
-
     return this.http.get(`${this.baseurl}/search/movie?api_key=${this.apikey}&query=${data.movieName}`);
   }
 
@@ -73,7 +70,6 @@ export class MoviesService {
   }
 
   // science-fiction:878
-
   fetchScienceFictionMovies(): Observable<any> {
     return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=878`);
   }

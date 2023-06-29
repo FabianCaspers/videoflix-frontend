@@ -50,7 +50,6 @@ export class HomeComponent implements OnInit {
     this.service.trendingMovieApiData().subscribe((result) => {
       console.log(result, 'trendingresult#');
       this.trendingMovieResult = result.results;
-      // this.trendingMovieResult
     });
   }
 
@@ -60,9 +59,6 @@ export class HomeComponent implements OnInit {
       this.actionMovieResult = result.results;
     });
   }
-
-
-
 
   // adventure 
   adventureMovie() {
