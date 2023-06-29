@@ -32,6 +32,10 @@
     }
 }
 
+.carousel-dark, .carousel-control-next-icon, .carousel-control-prev-icon {
+    filter: unset;
+}
+
 .carousel-caption h2 {
     color: #e50914;
     font-weight: bold;

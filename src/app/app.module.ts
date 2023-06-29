@@ -7,12 +7,14 @@ import { HomeComponent } from './components/home/home.component';
 import { MovieSliderComponent } from './components/movie-slider/movie-slider.component';
 import {HttpClientModule} from '@angular/common/http';
 import { MoviesService } from './services/movies.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MovieSliderComponent
+    MovieSliderComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
