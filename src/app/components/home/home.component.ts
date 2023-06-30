@@ -41,14 +41,12 @@ export class HomeComponent implements OnInit {
   // bannerdata
   bannerData() {
     this.service.bannerApiData().subscribe((result) => {
-      console.log(result, 'bannerresult#');
       this.bannerResult = result.results;
     });
   }
 
   trendingData() {
     this.service.trendingMovieApiData().subscribe((result) => {
-      console.log(result, 'trendingresult#');
       this.trendingMovieResult = result.results;
     });
   }

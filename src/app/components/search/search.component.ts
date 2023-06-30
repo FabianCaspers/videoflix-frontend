@@ -28,7 +28,6 @@ export class SearchComponent implements OnInit {
 
   submitForm() {
       this.service.getSearchMovie(this.searchForm.value).subscribe((result)=>{
-          console.log(result,'searchmovie##');
           this.searchResult = result.results;
       });
   }
