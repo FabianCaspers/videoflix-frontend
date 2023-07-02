@@ -1,0 +1,70 @@
+section {
+    background-image: url(../../../assets/img/login-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100dvw;
+    height: 100dvh;
+    position: relative;
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        /*         transform: translate(-50%, -50%); */
+        left: 35%;
+        right: 35%;
+        top: 30%;
+        background-color: rgba(0, 0, 0, 0.75);
+        text-align: center;
+        padding: 2rem;
+        border-radius: 1rem;
+        .row {
+            margin-bottom: 2rem;
+        }
+        h3 {
+            color: whitesmoke;
+            margin-bottom: 2rem;
+        }
+        button {
+            background-color: #e50914;
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        input,
+        button {
+            height: 3rem;
+        }
+        input {
+            background: #333;
+            border: none;
+            &::placeholder {
+                color: #8c8c8c;
+            }
+        }
+
+        .mb-3 {
+            margin-bottom: 2rem !important;
+        }
+        .mb-4 {
+            margin-bottom: 4rem !important;
+        }
+        .mb-3,
+        .mb-4,
+        button {
+            width: 75%;
+        }
+        p {
+            color: #737373;
+            margin-top: 2rem;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
