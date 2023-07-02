@@ -13,6 +13,11 @@ import { SearchComponent } from './components/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +34,24 @@ import { RegisterComponent } from './components/register/register.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyDC_YpICnaeriPy7hE26VcJqpOh3LxnZlU",
+      authDomain: "flixhub-b3a0e.firebaseapp.com",
+      projectId: "flixhub-b3a0e",
+      storageBucket: "flixhub-b3a0e.appspot.com",
+      messagingSenderId: "1064533409454",
+      appId: "1:1064533409454:web:45eb651f0b0423c238f73f"
+    }),
+    provideFirestore(() => getFirestore()),
+    provideFirebaseApp(() => initializeApp({
+      apiKey: "AIzaSyDC_YpICnaeriPy7hE26VcJqpOh3LxnZlU",
+      authDomain: "flixhub-b3a0e.firebaseapp.com",
+      projectId: "flixhub-b3a0e",
+      storageBucket: "flixhub-b3a0e.appspot.com",
+      messagingSenderId: "1064533409454",
+      appId: "1:1064533409454:web:45eb651f0b0423c238f73f"
+    }))
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]
