@@ -2,10 +2,16 @@
     <form>
         <h3>Login</h3>
         <div class="mb-3">
-            <input placeholder="Email adress" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input placeholder="Email address" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            <div class="invalid-feedback">
+                Please enter a valid email address.
+            </div>
         </div>
         <div class="mb-4">
-            <input placeholder="Password" type="password" class="form-control" id="exampleInputPassword1">
+            <input placeholder="Password" type="password" class="form-control" id="exampleInputPassword1" required>
+            <div class="invalid-feedback">
+                Please enter a password.
+            </div>
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
         <p>New on Flixhub? <a href="#">Register now!</a></p>
