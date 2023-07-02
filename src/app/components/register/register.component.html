@@ -1,19 +1,19 @@
 <section>
-    <form>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
         <h3>Register</h3>
         <div class="row">
             <div class="col">
-              <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+              <input type="text" class="form-control" placeholder="First name" formControlName="firstname">
             </div>
             <div class="col">
-              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+              <input type="text" class="form-control" placeholder="Last name" formControlName="lastname">
             </div>
           </div>
         <div class="mb-3">
-            <input placeholder="Email adress" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input placeholder="Email adress" type="email" class="form-control" id="exampleInputEmail1" formControlName="email">
         </div>
         <div class="mb-4">
-            <input placeholder="Password" type="password" class="form-control" id="exampleInputPassword1">
+            <input placeholder="Password" type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
         </div>
         <button type="submit" class="btn btn-primary">Sign up</button>
         <p>Already registered? <a [routerLink]="['/login']">Sign in!</a></p>

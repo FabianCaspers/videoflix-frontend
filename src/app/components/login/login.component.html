@@ -1,19 +1,19 @@
 <section>
-    <form>
+    <form (ngSubmit)="login()">
         <h3>Login</h3>
         <div class="mb-3">
-            <input placeholder="Email address" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            <input placeholder="Email address" type="email" class="form-control" id="exampleInputEmail1" formControlName="email" required>
             <div class="invalid-feedback">
                 Please enter a valid email address.
             </div>
         </div>
         <div class="mb-4">
-            <input placeholder="Password" type="password" class="form-control" id="exampleInputPassword1" required>
+            <input placeholder="Password" type="password" class="form-control" id="exampleInputPassword1" formControlName="password" required>
             <div class="invalid-feedback">
                 Please enter a password.
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
         <p>New on Flixhub? <a [routerLink]="['/register']">Register now!</a></p>
     </form>
 </section>
