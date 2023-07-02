@@ -11,6 +11,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { SearchComponent } from './components/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MovieSliderComponent,
     NavbarComponent,
     MovieDetailsComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
