@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
-import { Title,Meta } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Carousel } from 'bootstrap';
 
@@ -12,15 +12,15 @@ import { Carousel } from 'bootstrap';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private service: MoviesService,private title:Title,private meta:Meta) {
+  constructor(private service: MoviesService, private title: Title, private meta: Meta) {
     this.title.setTitle('Home - showtime');
-    this.meta.updateTag({name:'description',content:'watch online movies'});
+    this.meta.updateTag({ name: 'description', content: 'watch online movies' });
 
     this.mediaQueryList = window.matchMedia("(max-width: 990px)");
     this.mediaQueryListener = () => this.isSmallScreen = this.mediaQueryList.matches;
     this.mediaQueryList.addListener(this.mediaQueryListener);
-    
-   }
+
+  }
 
   bannerResult: any = [];
   trendingMovieResult: any = [];
@@ -49,6 +49,12 @@ export class HomeComponent implements OnInit {
     this.thrillerMovie();
     this.isSmallScreen = this.mediaQueryList.matches;
   }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isSmallScreen = event.target.innerWidth <= 990;
+  }
+
 
   ngOnDestroy(): void {
     this.mediaQueryList.removeListener(this.mediaQueryListener);
