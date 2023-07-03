@@ -76,6 +76,10 @@ export class UserService {
     this.firestore.collection('user').doc(uid).set(user);
   }
 
+  logout(): Observable<void> {
+    return from(this.auth.signOut());
+  }
+
  
 }
 

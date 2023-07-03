@@ -1,4 +1,6 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener} from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +8,12 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+
+  constructor(
+    public userService: UserService,
+    public router: Router,
+  ) {}
+
 
   title = 'showtime';
   navbg:any;
@@ -21,4 +29,11 @@ export class NavbarComponent {
         this.navbg = {}
     }
   }
-}
+
+  logout() {
+      this.userService.logout().subscribe(() => {
+        this.router.navigate(['login']);
+      });
+    }
+  }
+

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +17,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -51,7 +53,9 @@ import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
       storageBucket: "flixhub-b3a0e.appspot.com",
       messagingSenderId: "1064533409454",
       appId: "1:1064533409454:web:45eb651f0b0423c238f73f"
-    }))
+    })),
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]

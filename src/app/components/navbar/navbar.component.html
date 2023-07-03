@@ -1,20 +1,29 @@
 <!-- navbar start  -->
 <nav class="navbar navbar-expand-lg fixed-top" [ngStyle]="navbg">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="">FLIXHUB</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="search">Search</a>
-          </li>
-        </ul>
-      </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">FLIXHUB</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn" id="dropdownMenuButton" ngbDropdownToggle>
+            
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="hover">
+            <button class="dropdown-item" (click)="logout()">Logout</button>
+          </div>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="search">Search</a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  <!-- navbar end  -->
+  </div>
+</nav>
+<!-- navbar end  -->

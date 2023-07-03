@@ -9,3 +9,44 @@
     font-weight: 600;
     font-size: 1.25rem;
 }
+
+.btn {
+    min-width: 55px !important;
+    width: 55px;
+    height: 55px;
+    background-image: url(../../../assets/img/avatar.jpg);
+    background-position: center;
+    background-size: cover;
+    /* background-color: orange; */
+    border-color: none !important;
+    border-radius: 12px;
+    color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.d-inline-block {
+    margin-right: 2rem;
+}
+.dropdownMenuButton {
+    right: 0 !important;
+    left: unset !important;
+    
+}
+.hover {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-width: unset !important;
+    border-radius: 14px;
+}
+.dropdown-item {
+    background-color: #E50914;
+    min-width: unset !important;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+}
