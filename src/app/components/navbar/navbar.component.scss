@@ -31,6 +31,9 @@
 
 .d-inline-block {
     margin-right: 2rem;
+    @media (max-width: 992px) {
+        margin-right: 0;
+    }
 }
 .dropdownMenuButton {
     right: 0 !important;
@@ -49,4 +52,11 @@
     border-radius: 10px;
     color: white;
     font-weight: 600;
+}
+.navbar-toggler {
+    background-color: #E50914;
+}
+
+.navbar-collapse {
+    margin-top: 14px;
 }

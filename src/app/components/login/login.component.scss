@@ -19,6 +19,11 @@ section {
         text-align: center;
         padding: 2rem;
         border-radius: 1rem;
+        @media (max-width: 992px) {
+            position: unset;
+            height: 100dvh;
+            border-radius: unset;
+        }
         h3 {
             color: whitesmoke;
             margin-bottom: 2rem;
