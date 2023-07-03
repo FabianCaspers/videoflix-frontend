@@ -27,13 +27,22 @@
                 height: 700px;
                 object-fit: cover;
                 width: 100dvw;
+                @media (max-width: 992px) {
+                    padding-top: 60px;
+                }
             }
         }
     }
 }
 
-.carousel-dark, .carousel-control-next-icon, .carousel-control-prev-icon {
+.carousel-dark,
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
     filter: unset;
+    span {
+        background-color: black;
+        border-radius: 50%;
+    }
 }
 
 .carousel-caption h2 {
