@@ -1,5 +1,5 @@
 <section>
-    <form (ngSubmit)="login()">
+    <form [formGroup]="form" (ngSubmit)="login()">
         <h3>Login</h3>
         <div class="mb-3">
             <input placeholder="Email address" type="email" class="form-control" id="exampleInputEmail1" formControlName="email" required>
