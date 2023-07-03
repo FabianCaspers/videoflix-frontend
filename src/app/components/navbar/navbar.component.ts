@@ -1,6 +1,6 @@
 import { Component, HostListener} from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
-import { Router } from '@angular/router';
+import { Router, Event, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,11 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  isLoginOrRegister: boolean;
 
   constructor(
     public userService: UserService,
     public router: Router,
-  ) {}
+  ) {
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        this.isLoginOrRegister = event.url === '/login' || event.url === '/register' || event.url === '/';
+      }
+    });
+  }
 
 
   title = 'showtime';
