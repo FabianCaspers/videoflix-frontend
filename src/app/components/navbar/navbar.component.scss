@@ -59,4 +59,7 @@
 
 .navbar-collapse {
     margin-top: 14px;
+    @media (max-width: 992px) {
+        position: absolute;
+    }
 }
