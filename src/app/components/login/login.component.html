@@ -1,6 +1,11 @@
 <section>
     <form [formGroup]="form" (ngSubmit)="login()">
         <h3>Login</h3>
+        <div class="demo">
+            <h4>Demo Account</h4>
+            <p><b>email:</b> demo@demo.com</p>
+            <p><b>password:</b> Password1234</p>
+        </div>
         <div class="mb-3">
             <input placeholder="Email address" type="email" class="form-control" id="exampleInputEmail1" formControlName="email" required>
             <div class="invalid-feedback">
