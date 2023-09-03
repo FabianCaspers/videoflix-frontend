@@ -38,9 +38,9 @@ export class NavbarComponent {
   }
 
   logout() {
-      this.userService.logout().subscribe(() => {
-        this.router.navigate(['login']);
-      });
-    }
+    this.userService.logout();
+    this.router.navigate(['login']);
+  }
+  
   }
 

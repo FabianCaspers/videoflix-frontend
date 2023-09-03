@@ -1,97 +1,41 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Observable, from } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
+  user: User = new User();
 
-  
-  users!: any;
-  userStatus!: string;
-  currentSignedInUserId!: string;
-  loggedInUserFromDb!: any;
-  user: User = new User;
+  // Deine Django-Backend-Endpunkte
+  private registerUrl = 'http://127.0.0.1:8000/authentication/register/';
+  private loginUrl = 'http://127.0.0.1:8000/authentication/login/';
 
-  constructor(
-    private auth: AngularFireAuth,
-    private firestore: AngularFirestore
-  ) {
-    this.getCurrenctUserCollection();
-    this.auth.onAuthStateChanged((user) => {
-      if (user) {
-        this.currentSignedInUserId = user.uid;
-      }
-    });
+  constructor(private http: HttpClient) {}
+
+  register(register: Register): Observable<any> {
+    return this.http.post<any>(this.registerUrl, register);
   }
 
-  signIn(params: SignIn): Observable<any> {
-    return from(this.auth.signInWithEmailAndPassword(
-      params.email, params.password
-    ));
+  login(signIn: SignIn): Observable<any> {
+    return this.http.post<any>(this.loginUrl, signIn);
   }
 
-  getCurrenctUserCollection() {
-    this.firestore.collection('user')
-      .valueChanges()
-      .subscribe((users: any) => {
-        this.users = users;
-        if (this.currentSignedInUserId) {
-          this.getCurrentUser();
-        }
-      });
+  logout(): void {
+    
   }
-
-  async getCurrentUser() {
-    const docRef = this.firestore.collection('user').doc(this.currentSignedInUserId).ref;
-    const docSnap = await docRef.get();
-    this.loggedInUserFromDb = docSnap.data();
-    this.generateUserObject();
-  }
-
-  generateUserObject() {
-    this.user.firstname = this.loggedInUserFromDb.firstname;
-    this.user.lastname = this.loggedInUserFromDb.lastname;
-    this.user.email = this.loggedInUserFromDb.email;
-    this.user.userId = this.loggedInUserFromDb.userId;
-  }
-
-  async register(register: Register): Promise<any> {
-    const result = await this.auth.createUserWithEmailAndPassword(register.email, register.password);
-
-    const multiFactor: any = result.user?.multiFactor;
-    const uid = multiFactor?.user.uid;
-
-    const user: User = {
-      firstname: register.firstname,
-      lastname: register.lastname,
-      password: register.password,
-      email: register.email,
-      userId: uid,
-    }
-
-    this.firestore.collection('user').doc(uid).set(user);
-  }
-
-  logout(): Observable<void> {
-    return from(this.auth.signOut());
-  }
-
- 
 }
 
 type SignIn = {
   email: string;
   password: string;
-}
-
+};
 
 type Register = {
-  firstname: string;
-  lastname: string;
+  first_name: string;
+  last_name: string;
   email: string;
   password: string;
-}
+};

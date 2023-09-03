@@ -26,23 +26,24 @@ export class RegisterComponent {
     private router: Router,
   ) {
     this.registerForm = new FormGroup({
-      'firstname': new FormControl('', [Validators.required, Validators.pattern(this.namePattern), Validators.minLength(2), Validators.maxLength(12)]),
-      'lastname': new FormControl('', [Validators.required, Validators.pattern(this.namePattern), Validators.minLength(2), Validators.maxLength(12)]),
+      'first_name': new FormControl('', [Validators.required, Validators.pattern(this.namePattern), Validators.minLength(2), Validators.maxLength(12)]),
+      'last_name': new FormControl('', [Validators.required, Validators.pattern(this.namePattern), Validators.minLength(2), Validators.maxLength(12)]),
       'email': new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
       'password': new FormControl('', [Validators.required, Validators.pattern(this.passwordPattern)])
     });
   }
 
   register() {
+    console.log(this.registerForm.value);
     this.isRegistering = true;
-    let user = new User(this.registerForm.value);
-    from(this.userservice.register(user)).subscribe(() => {
+    from(this.userservice.register(this.registerForm.value)).subscribe(() => {
       this.isRegistering = false;
       this.navigateToLogin();
     }, (error: any) => {
       this.isRegistering = false;
     })
-  }
+}
+
 
   navigateToLogin() {
     setTimeout(() => {
