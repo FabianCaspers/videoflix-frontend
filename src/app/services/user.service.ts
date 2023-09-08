@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { Observable } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -20,8 +21,25 @@ export class UserService {
   }
 
   login(signIn: SignIn): Observable<any> {
-    return this.http.post<any>(this.loginUrl, signIn);
-  }
+    const headers = {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            'X-CSRFToken': this.getCookie('csrftoken')
+        }),
+        withCredentials: true
+    };
+    return this.http.post<any>(this.loginUrl, signIn, headers);
+}
+
+private getCookie(name: string): string {
+    const value = "; " + document.cookie;
+    const parts = value.split("; " + name + "=");
+    if (parts.length == 2) {
+        return parts.pop().split(";").shift();
+    }
+    return '';
+}
+
 
   logout(): void {
     
