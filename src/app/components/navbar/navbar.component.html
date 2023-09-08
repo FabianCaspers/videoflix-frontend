@@ -12,6 +12,7 @@
           <div ngbDropdown class="d-inline-block">
             <button class="btn" id="dropdownMenuButton" ngbDropdownToggle></button>
             <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" class="hover">
+              <button [routerLink]="['/profile']" class="dropdown-item">Profile</button>
               <button class="dropdown-item" (click)="logout()">Logout</button>
             </div>
           </div>

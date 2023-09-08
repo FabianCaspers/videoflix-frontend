@@ -4,6 +4,7 @@
     font-size: 1.5rem;
 }
 
+
 .navbar-nav .nav-item .nav-link {
     color: #E50914;
     font-weight: 600;
@@ -38,13 +39,14 @@
 .dropdownMenuButton {
     right: 0 !important;
     left: unset !important;
-    
 }
 .hover {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     min-width: unset !important;
     border-radius: 14px;
+    background-color: transparent;
+    border: none;
 }
 .dropdown-item {
     background-color: #E50914;
@@ -52,6 +54,10 @@
     border-radius: 10px;
     color: white;
     font-weight: 600;
+    margin-bottom: 4px;
+    &:hover {
+        scale: 1.1;
+    }
 }
 .navbar-toggler {
     background-color: #E50914;
