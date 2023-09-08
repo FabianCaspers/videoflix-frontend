@@ -19,6 +19,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 
 
 
@@ -32,7 +33,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     SearchComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
