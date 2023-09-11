@@ -1,0 +1,17 @@
+.privacy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem;
+    position: absolute;
+    top: 100px;
+    p, ul, li {
+        color: whitesmoke;
+    }
+    h2 { 
+        color: whitesmoke;
+        margin-bottom: 5rem;
+        
+    }
+}

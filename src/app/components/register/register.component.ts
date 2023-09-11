@@ -34,7 +34,6 @@ export class RegisterComponent {
   }
 
   register() {
-    console.log(this.registerForm.value);
     this.isRegistering = true;
     from(this.userservice.register(this.registerForm.value)).subscribe(() => {
       this.isRegistering = false;

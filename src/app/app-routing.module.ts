@@ -8,6 +8,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
+import { ImprintComponent } from './components/imprint/imprint.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path:'movie/:id', component: MovieDetailsComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'confirm', component: ConfirmComponent },
+  { path: 'imprint', component: ImprintComponent},
+  { path: 'privacy', component: PrivacyComponent}
 ];
 
 @NgModule({

@@ -63,6 +63,22 @@ export class UserService {
   logout(): void {
     localStorage.removeItem('token');
   }
+
+  changeEmail(newEmail: string): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = {
+      headers: new HttpHeaders({
+        Authorization: `Token ${token}`,
+        'Content-Type': 'application/json',
+        'X-CSRFToken': this.getCookie('csrftoken'),
+      }),
+      withCredentials: true,
+    };
+    const url = 'http://127.0.0.1:8000/authentication/send-change-email-request/';
+    return this.http.post(url, { newEmail }, headers);
+}
+
+  
 }
 
 type SignIn = {
@@ -76,3 +92,6 @@ type Register = {
   email: string;
   password: string;
 };
+
+
+

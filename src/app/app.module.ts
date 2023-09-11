@@ -20,6 +20,13 @@ import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { ImprintComponent } from './components/imprint/imprint.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 
 
 
@@ -34,12 +41,19 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    ImprintComponent,
+    PrivacyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyDC_YpICnaeriPy7hE26VcJqpOh3LxnZlU",
