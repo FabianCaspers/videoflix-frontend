@@ -25,18 +25,13 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   playTrailer(): void {
+    const youtubeLink = `https://www.youtube.com/watch?v=${this.getMovieVideoResult}`;
+    
+    window.open(youtubeLink, '_blank');
+
     const trailerLink = document.getElementById('watch-trailer-link') as HTMLAnchorElement;
-    const trailerIframe = document.getElementById('trailer-iframe') as HTMLIFrameElement;
-
-    // Setzen Sie die Quelle des iframe auf den Trailer-Link
-    trailerIframe.src = trailerLink.href;
-
-    // Verstecken Sie den Link und zeigen Sie den Div-Container mit dem Trailer an
     trailerLink.style.display = 'none';
-    trailerIframe.style.display = 'block';
-  }
-  
-
+}
 
   getMovie(id:any){
     this.service.getMovieDetails(id).subscribe(async(result)=>{
