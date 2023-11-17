@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ConfirmComponent implements OnInit {
   
-  backendUrl = 'http://localhost:8000/authentication/confirm';
+  backendUrl = 'http://fabianvideoflix.pythonanywhere.com/authentication/confirm';
 
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) {}
 

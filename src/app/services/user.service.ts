@@ -11,9 +11,9 @@ import { tap } from 'rxjs/operators';
 export class UserService {
   user: User = new User();
 
-  private registerUrl = 'http://127.0.0.1:8000/authentication/register/';
-  private loginUrl = 'http://127.0.0.1:8000/authentication/login/';
-  private currentUserUrl = 'http://127.0.0.1:8000/authentication/current_user/';
+  private registerUrl = 'http://fabianvideoflix.pythonanywhere.com/authentication/register/';
+  private loginUrl = 'http://fabianvideoflix.pythonanywhere.com/authentication/login/';
+  private currentUserUrl = 'http://fabianvideoflix.pythonanywhere.com/authentication/current_user/';
 
   getCurrentUser(): Observable<User> {
     const token = localStorage.getItem('token');
@@ -74,7 +74,7 @@ export class UserService {
       }),
       withCredentials: true,
     };
-    const url = 'http://127.0.0.1:8000/authentication/send-change-email-request/';
+    const url = 'http://fabianvideoflix.pythonanywhere.com/authentication/send-change-email-request/';
     return this.http.post(url, { newEmail }, headers);
 }
 
