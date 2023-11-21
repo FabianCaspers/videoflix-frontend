@@ -74,7 +74,7 @@ export class UserService {
       }),
       withCredentials: true,
     };
-    const url = 'https://teste.fabiancaspers.com/authentication/send-change-email-request/';
+    const url = 'https://testen.fabiancaspers.com/authentication/send-change-email-request/';
     return this.http.post(url, { newEmail }, headers);
 }
 
