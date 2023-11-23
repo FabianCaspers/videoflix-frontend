@@ -33,6 +33,20 @@ a {
 
 .user-text {
     text-align: center;
+    @media (max-width: 992px) {
+        text-align: none;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.user-data {
+    @media (max-width: 992px) {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .links {
