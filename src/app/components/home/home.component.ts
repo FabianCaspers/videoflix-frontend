@@ -3,6 +3,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 import { Title, Meta } from '@angular/platform-browser';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Carousel } from 'bootstrap';
+import { VideoService } from 'src/app/services/video-service.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Carousel } from 'bootstrap';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private service: MoviesService, private title: Title, private meta: Meta) {
+  constructor(private service: MoviesService, private title: Title, private meta: Meta, private videoService: VideoService) {
     this.title.setTitle('Home - showtime');
     this.meta.updateTag({ name: 'description', content: 'watch online movies' });
 
@@ -35,6 +36,7 @@ export class HomeComponent implements OnInit {
   mediaQueryList: MediaQueryList;
   mediaQueryListener: () => void;
   currentIndex: number = 0;
+  ownMovies: any = [];
 
 
   ngOnInit(): void {
@@ -47,6 +49,7 @@ export class HomeComponent implements OnInit {
     this.documentaryMovie();
     this.sciencefictionMovie();
     this.thrillerMovie();
+    this.getOwnMovies();
     this.isSmallScreen = this.mediaQueryList.matches;
   }
 
@@ -71,6 +74,12 @@ export class HomeComponent implements OnInit {
 
   prev() {
     this.currentIndex = (this.currentIndex - 1 + this.bannerResult.length) % this.bannerResult.length;
+  }
+
+  getOwnMovies() {
+    this.videoService.getVideos().subscribe((data) => {
+      this.ownMovies = data;
+    });
   }
 
 

@@ -135,14 +135,18 @@
   </div>
 
   <!-- own movies  -->
-  <!-- <div class="row mt-4">
-    <h5 class="text-white">Own Movies</h5>
-    <div class="rowposter mt-3 p-2">
-      <ng-container *ngFor="let t of trendingMovieResult">
-        <img src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}" class="rowimg largeposter" alt="..."
-          [routerLink]="['/movie',t.id]">
-      </ng-container>
-    </div>
-  </div> -->
+<!-- own movies  -->
+<div class="row mt-4">
+  <h5 class="text-white">Own Movies</h5>
+  <div class="rowposter mt-3 p-2">
+    <ng-container *ngFor="let video of ownMovies">
+      <video width="320" height="240" controls>
+        <source [src]="video.video_url" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </ng-container>
+  </div>
+</div>
+
 
 </div>
