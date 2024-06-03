@@ -38,6 +38,15 @@ export class HomeComponent implements OnInit {
   currentIndex: number = 0;
   ownMovies: any = [];
 
+  creatorMovies = [
+    { video_url: '../../../assets/videos/24496-344562743_small.mp4' },
+    { video_url: '../../../assets/videos/28052-367411298_small.mp4' },
+    { video_url: '../../../assets/videos/202844-919000222_tiny.mp4' },
+    { video_url: '../../../assets/videos/21551-319487844_tiny.mp4' },
+    { video_url: '../../../assets/videos/32132-390688056_small.mp4' },
+    { video_url: '../../../assets/videos/33871-398473585_tiny.mp4' },
+  ];
+
 
   ngOnInit(): void {
     this.bannerData();
