@@ -95,6 +95,11 @@ button {
     border: none;
     width: 320px;
     height: 240px;
+    img {
+        border: 3px outset #050505;
+        padding: 60px 100px;
+        margin-top: 30px;
+    }
 }
 .video-container {
     /* position: relative; */
@@ -103,7 +108,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px outset #050505;
+    /* border: 3px outset #050505; */
   }
   
   .add-button {
